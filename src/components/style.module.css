@@ -1,0 +1,10 @@
+.cont {
+    border: 1px SOLID black;
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: flex-start;
+
+}

@@ -1,4 +1,4 @@
-import {combineReducers, configureStore, Tuple} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import userReducer from "./reducers/UserSlice"
 import {postAPI} from "../services/PostService";
 
@@ -10,11 +10,11 @@ const rootReducer = combineReducers({
 export const setupStore = () => {
     return configureStore({
         reducer: rootReducer,
-        middleware: (getDefaultMiddleware) =>
-            new Tuple(postAPI.middleware)
-            // getDefaultMiddleware().concat(postAPI.middleware)
+            middleware: (getDefaultMiddleware) =>
+                getDefaultMiddleware().concat(postAPI.middleware)
 
-    });
+        });
+
 }
 
 export type RootState = ReturnType<typeof rootReducer>;
